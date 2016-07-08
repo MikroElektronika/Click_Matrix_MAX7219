@@ -1,6 +1,6 @@
 ![MikroE](http://www.mikroe.com/img/designs/beta/logo_small.png)
 
-![matrix_click]()
+![matrix_click](http://cdn.mikroe.com/img/click/matrix-r/matrix-r-click.png)
 
 ---
 [Product Page ( R ) ](http://www.mikroe.com/click/matrix-r/)
@@ -8,11 +8,12 @@
 [Product Page ( G ) ](http://www.mikroe.com/click/matrix-g/)
 
 [Manual Page](http://docs.mikroe.com/)
+
 ---
 
 ### General Description
 
-Matrix R click is a mikroBUS add-on board with two red 5x7 matrices driven by two MAX7219 8-bit LED Display Drivers. The active area of each matrix is 7.62mm high and 5.08 mm wide. 7x5 is a standard resolution for displaying ASCII characters, so the click is essentially a dual-character display capable of showing letters in more readable typefaces compared to a 14-segment display. The click communicates with the target MCU through the mikroBUS SPI interface with two separate Chip Select lines for each matrix (CSL for the left, CSR for the right). This board is designed to use a 5V power supply.
+Matrix click is a mikroBUS add-on board with two red 5x7 matrices driven by two MAX7219 8-bit LED Display Drivers. The active area of each matrix is 7.62mm high and 5.08 mm wide. 7x5 is a standard resolution for displaying ASCII characters, so the click is essentially a dual-character display capable of showing letters in more readable typefaces compared to a 14-segment display. The click communicates with the target MCU through the mikroBUS SPI interface with two separate Chip Select lines for each matrix (CSL for the left, CSR for the right). This board is designed to use a 5V power supply.
 
 ---
 
