@@ -3,12 +3,11 @@
 ![matrix_click]()
 
 ---
-[Product Page](http://www.mikroe.com/)
+[Product Page ( R ) ](http://www.mikroe.com/click/matrix-r/)
+
+[Product Page ( G ) ](http://www.mikroe.com/click/matrix-g/)
 
 [Manual Page](http://docs.mikroe.com/)
-
-[Learn Page](http://learn.mikroe.com/)
-
 ---
 
 ### General Description
