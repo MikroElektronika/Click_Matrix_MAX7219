@@ -7,7 +7,7 @@
 
 [Product Page ( G ) ](http://www.mikroe.com/click/matrix-g/)
 
-[Manual Page](http://docs.mikroe.com/)
+[Manual Page](http://docs.mikroe.com/Matrix_click)
 
 ---
 
