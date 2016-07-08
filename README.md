@@ -1,6 +1,6 @@
 ![MikroE](http://www.mikroe.com/img/designs/beta/logo_small.png)
 
-![matrix_click](http://cdn.mikroe.com/img/click/matrix-r/matrix-r-click.png)
+![matrix_click](http://cdn.mikroe.com/img/banners/news/2016/07/matrix-r-and-g-click-banner-news.png)
 
 ---
 [Product Page ( R ) ](http://www.mikroe.com/click/matrix-r/)
