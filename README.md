@@ -1,78 +1,125 @@
 ![MikroE](http://www.mikroe.com/img/designs/beta/logo_small.png)
 
-![matrix_click](http://cdn.mikroe.com/img/banners/news/2016/07/matrix-r-and-g-click-banner-news.png)
-
----
-[Product Page ( R ) ](http://www.mikroe.com/click/matrix-r/)
-
-[Product Page ( G ) ](http://www.mikroe.com/click/matrix-g/)
-
-[Manual Page](http://docs.mikroe.com/Matrix_click)
-
 ---
 
-### General Description
+# Matrix_R Click
 
-Matrix click is a mikroBUS add-on board with two red 5x7 matrices driven by two MAX7219 8-bit LED Display Drivers. The active area of each matrix is 7.62mm high and 5.08 mm wide. 7x5 is a standard resolution for displaying ASCII characters, so the click is essentially a dual-character display capable of showing letters in more readable typefaces compared to a 14-segment display. The click communicates with the target MCU through the mikroBUS SPI interface with two separate Chip Select lines for each matrix (CSL for the left, CSR for the right). This board is designed to use a 5V power supply.
+- **CIC Prefix**  : MATRIXR
+- **Author**      : Nenad Filipovic
+- **Verison**     : 1.0.1
+- **Date**        : Jul 2018.
 
 ---
 
-### Features
+### Software Support
 
-- A pair of 7x5 LED matrices
-- 2x MAX7219 8-digit LED Display drivers
-- SPI interface
-- 5V power supply
+We provide a library for the Matrix_R Click on our [LibStock](https://libstock.mikroe.com/projects/view/1852/matrix-r-click) 
+page, as well as a demo application (example), developed using MikroElektronika 
+[compilers](http://shop.mikroe.com/compilers). The demo can run on all the main 
+MikroElektronika [development boards](http://shop.mikroe.com/development-boards).
 
----
+**Library Description**
 
-### Example
+This library contains two drivers for controling  matrix display, 
+as well as the functions write register and function for display character.
 
-#### Configuration
-* MCU:             ATMEGA32
-* Dev.Board:       EasyAVR Pro v7
-* Oscillator:      8 Mhz external
-* Ext. Modules:    Matrix R click
-* SW:              MikroC PRO for AVR
+Key functions :
 
-```
-#include "matrix.h"
+- ``` void matrixr_writeDataReg(uint8_t registerAdress, uint8_t dataValue) ``` - Generic write register function
+- ``` void matrixr_displayCharacter( uint8_t characterLeft, uint8_t characterRight ) ``` - Function display left and right character
 
-sbit MATRIX_CSR         at PORTA7_bit;
-sbit MATRIX_CSR_DIR 	at DDA7_bit;
-sbit MATRIX_CSL         at PORTA5_bit;
-sbit MATRIX_CSL_DIR 	at DDA5_bit;
+**Examples Description**
 
-void system_init( void );
+The application is composed of three sections :
 
-void system_init()
+- System Initialization - Intializes CS and AN pin as output and SPI module
+- Application Initialization - Default driver intializes boath max7219 register: decode mode, intensity, scan limit and shutdown.
+- Application Task - (code snippet) - This example show functionality of Matrix_R Click - display character, using the SPI interface.
+
+
+```.c
+
+void applicationTask()
 {
-    MATRIX_CSR_DIR = 1;
-    MATRIX_CSL_DIR = 1;
-    Delay_ms( 200 );
-
-    SPI1_Init_Advanced( _SPI_MASTER, _SPI_FCY_DIV8, _SPI_CLK_LO_LEADING );
-    Delay_ms( 200 );
+    matrixr_displayCharacter( ' ', 'M' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'M', 'i' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'i', 'k' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'k', 'r' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'r', 'o' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'o', 'E' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'E', 'l' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'l', 'e' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'e', 'k' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'k', 't' );
+    Delay_1sec();
+    matrixr_displayCharacter( 't', 'r' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'r', 'o' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'o', 'n' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'n', 'i' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'i', 'k' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'k', 'a' );
+    Delay_1sec();
+    matrixr_displayCharacter( 'a', ' ' );
+    Delay_1sec();
 }
 
-void main() 
-{
-    system_init();
-    matrix_init();
-
-    matrix_char_left( 'm' );
-    matrix_char_right( 'E' );
-    Delay_ms( 1000 );
-
-    matrix_blink_smooth( 3, MATRIX_MED_FAST );
-    Delay_ms( 1000 );
-
-    matrix_text_blink( "MIKROELEKTRONIKA", MATRIX_MED_FAST );
-    Delay_ms( 1000 );
-
-    matrix_text_scroll( "This is the demonstration of the Matrix Click board",
-                        MATRIX_MED );
-    Delay_ms( 1000 );
-
-}
 ```
+
+
+
+The full application code, and ready to use projects can be found on our 
+[LibStock](https://libstock.mikroe.com/projects/view/1852/matrix-r-click) page.
+
+Other mikroE Libraries used in the example:
+
+- SPI
+
+
+**Additional notes and informations**
+
+Depending on the development board you are using, you may need 
+[USB UART click](http://shop.mikroe.com/usb-uart-click), 
+[USB UART 2 Click](http://shop.mikroe.com/usb-uart-2-click) or 
+[RS232 Click](http://shop.mikroe.com/rs232-click) to connect to your PC, for 
+development systems with no UART to USB interface available on the board. The 
+terminal available in all Mikroelektronika 
+[compilers](http://shop.mikroe.com/compilers), or any other terminal application 
+of your choice, can be used to read the message.
+
+---
+### Architectures Supported
+
+#### mikroC
+
+| STM | KIN | CEC | MSP | TIVA | PIC | PIC32 | DSPIC | AVR | FT90x |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| x | x | x | x | x | x | x | x | x | x |
+
+#### mikroBasic
+
+| STM | KIN | CEC | MSP | TIVA | PIC | PIC32 | DSPIC | AVR | FT90x |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| x | x | x | x | x | x | x | x | x | x |
+
+#### mikroPascal
+
+| STM | KIN | CEC | MSP | TIVA | PIC | PIC32 | DSPIC | AVR | FT90x |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| x | x | x | x | x | x | x | x | x | x |
+
+---
+---
