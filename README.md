@@ -2,7 +2,7 @@
 
 ---
 
-# Matrix_R Click
+# Matrix R Click
 
 - **CIC Prefix**  : MATRIXR
 - **Author**      : Nenad Filipovic
@@ -13,7 +13,7 @@
 
 ### Software Support
 
-We provide a library for the Matrix_R Click on our [LibStock](https://libstock.mikroe.com/projects/view/1852/matrix-r-click) 
+We provide a library for the Matrix R Click on our [LibStock](https://libstock.mikroe.com/projects/view/1852/matrix-r-click) 
 page, as well as a demo application (example), developed using MikroElektronika 
 [compilers](http://shop.mikroe.com/compilers). The demo can run on all the main 
 MikroElektronika [development boards](http://shop.mikroe.com/development-boards).
